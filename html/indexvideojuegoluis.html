@@ -59,6 +59,31 @@
 			</div></section><br>
     
 	<div class="container" id="fondodiv">
+
+		<script>var imagenes = [
+			"../../img/img_daysgone/uno.gif",
+			"../../img/img_daysgone/dos.gif",
+			"../../img/img_daysgone/tres.gif",
+			"../../img/img_daysgone/cuatro.gif",
+			"../../img/img_daysgone/cinco.gif",
+		  ];
+		
+		  var indiceActual = 0;
+		
+		  function cambiarImagenSiguiente() {
+			indiceActual = (indiceActual + 1) % imagenes.length;
+			cambiarImagen(indiceActual);
+		  }
+		
+		  function cambiarImagenAnterior() {
+			indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+			cambiarImagen(indiceActual);
+		  }
+		
+		  function cambiarImagen(indice) {
+			var imagen = document.getElementById("imagenCambiante");
+			imagen.src = imagenes[indice];
+		  }</script>
      
         <h2>ARREGLO DE IMAGENES</h2>
 		<img id="imagenCambiante" src="../img/img_daysgone/uno.gif" alt="Imagen inicial" style="width: 500px; height: 300px;"><br>
