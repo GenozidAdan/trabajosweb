@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    margin-top: 0;
+    background-image: url("../img/img_index/9.jpg");
+    background-size: cover;
+    position: relative;
+  }
+   
+  .text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 4px #000000;
+      z-index: 1;
+  }
+  
+  .text-container h2 {
+      font-size: 3em;
+      margin: 0;
+  }
+  
+  .text-container h1 {
+      font-size: 6em;
+      margin: 0;
+  }
+  
+  .text-container h2:last-child {
+      font-size: 3em;
+      margin: 0;
+  }
+  
+  .container {
+  
+      width: 43%;
+      margin: 50px auto;
+      background-color: #F5F5F5;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-family: 'Roboto Serif', serif;
+      font-size: 60%;
+      
+    
+  
+    
+    }
+  
+    .container:hover {
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+  
+    h2 {
+      font-size: 44px;
+      margin-bottom: 10px;
+    font-family: 'Roboto Serif', serif;
+    }
+
+    h1{
+      font-size: 44px;
+      margin-bottom: 10px;
+    font-family: 'Roboto Serif', serif;
+    }
+  
+
+    label {
+        font-size: 44px;
+        margin-bottom: 10px;
+      font-family: 'Roboto Serif', serif;
+      }
+
+      input {
+        font-size: 44px;
+        margin-bottom: 10px;
+      font-family: 'Roboto Serif', serif;
+      }
+
+      .boton:hover {
+        color: goldenrod; /* cambia el color al pasar el cursor por encima */
+      }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-family: 'Roboto Serif', serif;
+      }
+    h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-align: justify;
+        font-family: 'Roboto Serif', serif;
+        }
+  
+  
+        a {
+          text-decoration: none; /* quita el subrayado */
+          color: black; /* cambia el color a negro */
+        }
+        
+        a:hover {
+          color: goldenrod; /* cambia el color al pasar el cursor por encima */
+        }
+
+   

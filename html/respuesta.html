@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respuesta</title>
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body onload="calcularEdad(), verificarContraseña()">
+<div class="container">
+    
+        <h3>Nombres:<h1 id="mensaje"></h1></h3><br>
+        <h3>Apellidos:<h2 id="mensaje1"></h2></h3><br>
+        <h3>Correo: <a id="mensaje2" href="mailto:correo"> Enviar</a></h3><br>
+        <h3>Telefono:<a id="mensaje3" href="tel:telefono"> Mandar mensaje</a></h3><br>
+     
+        
+        <h3 id="resultado"></h3><br>
+
+        <h3 id="resultado2"></h3><br>
+
+    <script>
+        
+        getParameter = (key) => {
+          address = window.location.search;
+          parameterList = new URLSearchParams(address);
+          return parameterList.get(key);
+        }
+        console.log(getParameter("nombre"));
+        var nombre = getParameter("nombre");
+        if(nombre!=null){
+          document.getElementById("mensaje").innerHTML = nombre;
+          alert("BIENVENIDO: "+nombre)
+        }
+
+
+        console.log(getParameter("apellidos"));
+        var apellidos = getParameter("apellidos");
+        if(apellidos!=null){
+          document.getElementById("mensaje1").innerHTML = apellidos;
+        }
+
+
+        console.log(getParameter("correo"));
+        var correo = getParameter("correo");
+        if(correo!=null){
+          document.getElementById("mensaje2").href = "mailto:"+correo;  
+        }
+
+
+        console.log(getParameter("telefono"));
+        var telefono = getParameter("telefono");
+        if(telefono!=null){
+          document.getElementById("mensaje3").href = "tel:"+telefono;  
+        }
+    
+        function calcularEdad() {
+      // Obtener la fecha de nacimiento desde la URL
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const fechaNacimientoStr = urlParams.get('fecha-nacimiento');
+
+      // Crear un objeto de fecha a partir de la cadena de texto
+      const fechaNacimiento = new Date(fechaNacimientoStr);
+
+      // Obtener la fecha actual
+      const fechaActual = new Date();
+
+      // Calcular la edad
+      let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+      // Comprobar si aún no ha pasado el cumpleaños de este año
+      if (
+        fechaNacimiento.getMonth() > fechaActual.getMonth() ||
+        (fechaNacimiento.getMonth() === fechaActual.getMonth() && fechaNacimiento.getDate() > fechaActual.getDate())
+      ) {
+        edad--;
+      }
+
+      // Mostrar la edad en la página
+      document.getElementById('resultado').textContent = `Tu edad es de: ${edad} años.`;
+    }
+
+
+
+    function verificarContraseña() {
+      // Obtener la contraseña desde la URL
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const contraseña = urlParams.get('contraseña');
+
+      // Verificar la longitud de la contraseña
+      if (contraseña.length < 5) {
+        document.getElementById('resultado2').textContent = '¡Advertencia! Tu contraseña es insegura. Debe tener al menos 5 caracteres.';
+      } else {
+        document.getElementById('resultado2').textContent = 'Tu contraseña es segura.';
+      }
+    }
+
+    
+      </script>
+   </div>
+   
+</body>
+</html>
